@@ -1,0 +1,80 @@
+{% extends "extends/base.html" %}
+{% block title %}
+<title>Week 7 Task 1 | Big Data Analytics</title>
+{% endblock title %}
+{% block root-title %}
+Home
+{% endblock root-title %}
+{% block page-title1 %}
+<button onclick="window.location.href='/'" class="btn btn-outline btn-rounded btn-info">
+    <i class="ti-arrow-left m-l-5"></i>
+    <span>Back Home</span>
+</button> Week 7
+{% endblock page-title1 %}
+{% block page-title2 %}
+Week 71
+{% endblock page-title2 %}
+{% block content %}
+
+<div class="row" onload="myfunction()">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <div class="white-box">
+            <form class="form-horizontal" action="week71" method="POST" enctype="multipart/form-data">
+                <div class="row">
+                    <h3 class="box-title m-b-0">Input Parameter</h3>
+                    <p class="text-muted m-b-30 font-13"> Menjalankan Naive Bayes pada Hadoop dengan JAVA </p>
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label class="col-sm-12">Tipe Kepentingan (Fitur 1)</label>
+                        <div class="col-sm-12">
+                            <input class="form-control" type="text" name="fitur_1" id="fitur_1"
+                                placeholder="Urgent / Near / None">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-12">Ada party ? (Fitur 2)</label>
+                        <div class="col-sm-12">
+                            <input class="form-control" type="text" name="fitur_2" id="fitur_2" placeholder="Yes / No">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-12">Malas atau tidak ? (Fitur 3)</label>
+                        <div class="col-sm-12">
+                            <input class="form-control" type="text" name="fitur_3" id="fitur_3" placeholder="Yes / No">
+                        </div>
+                    </div>
+                </div>
+                <button id="submit" class="btn btn-block btn-info btn-rounded">Proses</button>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+<div class="col-md-3"></div>
+<div class="panel panel-info block4">
+    <div class="panel-heading"> Detail Hasil Prediksi
+        <div class="pull-right"><a href="#" data-perform="panel-collapse"><i class="ti-minus"></i></a> <a href="#"
+                data-perform="panel-dismiss"><i class="ti-close"></i></a> </div>
+    </div>
+    <div class="panel-wrapper collapse in" aria-expanded="true">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col md-12">
+                    <form action="#" class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-sm-12">Fitur 1</label>
+                            <div class="col-sm-12">
+                                <input value="{{ prediction }}" class="form-control" type="text" name="hasil" id="hasil"
+                                    placeholder="Hasil">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+</div>
+{% endblock content %}

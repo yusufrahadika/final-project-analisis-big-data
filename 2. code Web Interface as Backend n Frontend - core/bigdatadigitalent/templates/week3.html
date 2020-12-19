@@ -1,0 +1,47 @@
+{% extends "extends/base.html" %}
+{% block title %}
+    <title>Week 3 | Big Data Analytics</title>
+{% endblock title %}
+{% block root-title %}
+    Home
+{% endblock root-title %}
+{% block page-title1 %}
+<button onclick="window.location.href='/'" class="btn btn-outline btn-rounded btn-info">
+    <i class="ti-arrow-left m-l-5"></i>
+    <span>Back Home</span>
+</button> Week 3
+{% endblock page-title1 %}
+{% block page-title2 %}
+    Week 3
+{% endblock page-title2 %}
+{% block content %}
+<div class="col-md-12 col-lg-12">
+    <div class="white-box bg-theme m-b-0">
+        <div class="city-weather-widget">
+            <h1>{{ result.name}}</h1>
+            <h4>Latitude: {{result.coord.lat}} Longitude: {{result.coord.lon}}</h4>
+            <div class="row p-t-30">
+                <div class="col-sm-6">
+                    <ul class="side-icon-text">
+                        <li><span class="di vm"><i class="wi wi-day-hail"></i></span>
+                            <div class="di vm">
+                                <h1 class="m-b-0">{{celcius|floatformat:0}}<sup>o</sup> Celcius</h1>
+                                {% for weather in result.weather %}
+                                    <h5 class="m-t-0">{{weather.description}}</h5>
+                                {% endfor %}
+                                
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-6">
+                    <ul class="list-icons pull-right text-white">
+                        <li><i class="wi wi-day-sunny m-r-5"></i>Humidity {{result.main.humidity}}%</li>
+                        <li><i class=" wi wi-day-windy m-r-5"></i>Wind {{result.wind.speed}}%</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

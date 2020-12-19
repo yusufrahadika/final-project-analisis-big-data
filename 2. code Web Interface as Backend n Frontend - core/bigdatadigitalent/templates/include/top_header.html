@@ -1,0 +1,33 @@
+{% load static %}
+<nav class="navbar navbar-default navbar-static-top m-b-0">
+    <div class="navbar-header">
+        <div class="top-left-part">
+            <a class="logo" href="/">
+                <b>
+                    <img src="{% static 'img/ub.png' %}" alt="home" class="dark-logo" />
+                </b>
+                <span class="hidden-xs">
+                    <img src="{% static 'img/filkom1.png' %}" alt="home" class="dark-logo" />
+                </span> 
+            </a>
+        </div>
+        <ul class="nav navbar-top-links navbar-right pull-right">
+            <li class="dropdown">
+                <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"> <img src="{% static 'img/guest.png' %}" alt="user-img" width="36" class="img-circle"><b class="hidden-xs">Kelompok 16  </b><span class="caret"></span> </a>
+                <ul class="dropdown-menu dropdown-user animated flipInY">
+                    <li>
+                        <div class="dw-user-box">
+                            <div class="u-img"><img src="{% static 'img/guest.png' %}" alt="user" /></div>
+                            <div class="u-text">
+                                <h4>Kelompok 16</h4>
+                        </div>
+                    </li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#"><i class="ti-user"></i> Afwan Ghofur</a></li>
+                    <li><a href="#"><i class="ti-user"></i> Mikhael Alexander</a></li>
+                    <li><a href="#"><i class="ti-user"></i> Muhammad Ismail Hasan</a></li>
+                </ul>
+            </  li>
+        </ul>
+    </div>
+</nav>
