@@ -391,31 +391,29 @@ def nb_run(request, type_api=True):
 	
 	# make unique directory
 	output_dir = randomString(10)
+
+	payload = json.loads(request.body) if type_api else request.POST
 	
-	if type_api:
-		payload = json.loads(request.body)
-		fitur_1 = payload['fitur_1']
-		fitur_2 = payload['fitur_2']
-		fitur_3 = payload['fitur_3']
-	else:
-		fitur_1 = request.POST['fitur_1']
-		fitur_2 =  request.POST['fitur_2']
-		fitur_3 =  request.POST['fitur_3']
+	fitur_1 = payload['fitur_1']
+	fitur_2 = payload['fitur_2']
+	fitur_3 = payload['fitur_3']
+	fitur_4 = payload['fitur_4']
+	fitur_5 = payload['fitur_5']
 
 	# merge input 
-	dataInput = fitur_1 + "," + fitur_2 + "," + fitur_3
+	dataInput = fitur_1 + "," + fitur_2 + "," + fitur_3 + "," + fitur_4 + "," + fitur_5
 
 	#run hadoop
-	exitcode, stdout, stdin = run_process([HADOOP_BIN, 'jar', 'hadoop/NBMapReduce/NBMapReduce.jar', 'NBCDriver', dataInput, '/user/ubuntu/nb-input/dataset.txt', '/user/ubuntu/nb-output/'+output_dir])
+	exitcode, stdout, stdin = run_process([HADOOP_BIN, 'jar', 'hadoop/NBMapReduce/NBMapReduce.jar', 'NBCDriver', dataInput, 'hadoop/NBMapReduce/dataset.txt', 'hadoop/NBMapReduce/output/'+output_dir])
 
 	#Return if error occured		
 	if exitcode :
 		cetak = exitcode
 	else :
-		cetak = run_process([HADOOP_BIN, 'fs', '-cat' , '/user/ubuntu/nb-output/'+output_dir+'/*'])
+		cetak = run_process([HADOOP_BIN, 'fs', '-cat' , 'hadoop/NBMapReduce/output/'+output_dir+'/*'])
 
 	#delete output dir
-	run_process([HADOOP_BIN, "fs", "-rm", "-r", '/user/ubuntu/nb-output/'+output_dir])
+	run_process([HADOOP_BIN, "fs", "-rm", "-r", 'hadoop/NBMapReduce/output/'+output_dir])
 
 	#return
 	return cetak[1]

@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  server:
+    container_name: server_container
+    build: ./2. code Web Interface as Backend n Frontend - core
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./2. code Web Interface as Backend n Frontend - core/:/app
+    restart: always
