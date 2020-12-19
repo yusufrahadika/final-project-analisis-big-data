@@ -393,15 +393,7 @@ def nb_run(request, type_api=True):
 	output_dir = randomString(10)
 
 	payload = json.loads(request.body) if type_api else request.POST
-	
-	fitur_1 = payload['fitur_1']
-	fitur_2 = payload['fitur_2']
-	fitur_3 = payload['fitur_3']
-	fitur_4 = payload['fitur_4']
-	fitur_5 = payload['fitur_5']
-
-	# merge input 
-	dataInput = fitur_1 + "," + fitur_2 + "," + fitur_3 + "," + fitur_4 + "," + fitur_5
+	dataInput = ",".join([payload[f'fitur_{i}'] for i in range(1, 7)])
 
 	#run hadoop
 	exitcode, stdout, stdin = run_process([HADOOP_BIN, 'jar', 'hadoop/NBMapReduce/NBMapReduce.jar', 'NBCDriver', dataInput, 'hadoop/NBMapReduce/dataset.txt', 'hadoop/NBMapReduce/output/'+output_dir])

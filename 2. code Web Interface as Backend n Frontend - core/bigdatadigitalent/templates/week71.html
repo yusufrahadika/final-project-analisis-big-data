@@ -26,22 +26,72 @@ Week 71
                     <p class="text-muted m-b-30 font-13"> Menjalankan Naive Bayes pada Hadoop dengan JAVA </p>
                     {% csrf_token %}
                     <div class="form-group">
-                        <label class="col-sm-12">Tipe Kepentingan (Fitur 1)</label>
+                        <label class="col-sm-12">Harga Beli (Fitur 1)</label>
                         <div class="col-sm-12">
-                            <input class="form-control" type="text" name="fitur_1" id="fitur_1"
-                                placeholder="Urgent / Near / None">
+                            <select class="form-control" name="fitur_1" id="fitur_1" required>
+                                <option disabled selected>Pilih kategori harga beli</option>
+                                <option value="low">Rendah</option>
+                                <option value="med">Medium</option>
+                                <option value="high">Tinggi</option>
+                                <option value="vhigh">Sangat Tinggi</option>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-12">Ada party ? (Fitur 2)</label>
+                        <label class="col-sm-12">Biaya Perawatan (Fitur 2)</label>
                         <div class="col-sm-12">
-                            <input class="form-control" type="text" name="fitur_2" id="fitur_2" placeholder="Yes / No">
+                            <select class="form-control" name="fitur_2" id="fitur_2" required>
+                                <option disabled selected>Pilih kategori biaya perawatan</option>
+                                <option value="low">Rendah</option>
+                                <option value="med">Medium</option>
+                                <option value="high">Tinggi</option>
+                                <option value="vhigh">Sangat Tinggi</option>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-12">Malas atau tidak ? (Fitur 3)</label>
+                        <label class="col-sm-12">Jumlah Pintu (Fitur 3)</label>
                         <div class="col-sm-12">
-                            <input class="form-control" type="text" name="fitur_3" id="fitur_3" placeholder="Yes / No">
+                            <select class="form-control" name="fitur_3" id="fitur_3" required>
+                                <option disabled selected>Pilih jumlah pintu</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5more">5 atau lebih</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-12">Kapasitas penumpang (Fitur 4)</label>
+                        <div class="col-sm-12">
+                            <select class="form-control" name="fitur_4" id="fitur_4" required>
+                                <option disabled selected>Pilih kapasitas penumpang</option>
+                                <option value="2">2</option>
+                                <option value="4">4</option>
+                                <option value="more">Lebih dari 4</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-12">Ukuran bagasi (Fitur 5)</label>
+                        <div class="col-sm-12">
+                            <select class="form-control" name="fitur_5" id="fitur_5" required>
+                                <option disabled selected>Pilih ukuran bagasi</option>
+                                <option value="small">Kecil</option>
+                                <option value="med">Medium</option>
+                                <option value="big">Besar</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-12">Fitur keamanan (Fitur 6)</label>
+                        <div class="col-sm-12">
+                            <select class="form-control" name="fitur_6" id="fitur_6" required>
+                                <option disabled selected>Pilih fitur keamanan</option>
+                                <option value="low">Rendah</option>
+                                <option value="med">Medium</option>
+                                <option value="high">Tinggi</option>
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -49,7 +99,6 @@ Week 71
             </form>
         </div>
     </div>
-</div>
 </div>
 <div class="col-md-3"></div>
 <div class="panel panel-info block4">
@@ -75,6 +124,5 @@ Week 71
 
         </div>
     </div>
-</div>
 </div>
 {% endblock content %}
