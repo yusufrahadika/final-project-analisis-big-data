@@ -43,7 +43,9 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<String[]> fitursVal = new ArrayList<>();
     String[] fiturs = new String[6];
     String mMessage;
-    String hasilPredic;
+    String hasilPredict;
+    Double executionTime;
+    Double postTime;
 
     private static final String TAG = "prediksi";
 
@@ -167,7 +169,9 @@ public class MainActivity extends AppCompatActivity {
                             progressDialog.dismiss();
 
                             JSONObject json = new JSONObject(mMessage);
-                            hasilPredic = json.getString("prediksi");
+                            hasilPredict = json.getString("prediksi");
+                            executionTime = json.getDouble("execution_time");
+                            postTime = json.getDouble("post_time");
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -183,7 +187,7 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog.Builder Peringatan = new AlertDialog.Builder(this);
         Peringatan.setTitle("Hasil Klasifikasi");
         Peringatan
-                .setMessage(hasilPredic)
+                .setMessage(String.format("Hasil = %s\nWaktu eksekusi = %.2f\nWaktu post = %.2f", hasilPredict, executionTime, postTime))
                 .setCancelable(false)
                 .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                     @Override

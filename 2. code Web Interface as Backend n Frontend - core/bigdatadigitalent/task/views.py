@@ -4,6 +4,7 @@ import random
 import os
 import shutil
 import subprocess
+import time
 
 import json
 
@@ -311,11 +312,13 @@ def function_week7(request):
 
 def function_week7_task_1(request):
 	if request.method == 'POST':
-		cetak = nb_run(request, False)
+		cetak, running_time, post_time = nb_run(request, False)
 
 		#render
 		return render(request, 'week71.html', {
-		'prediction' : cetak
+		'prediction' : cetak,
+		'execution_time': running_time,
+		'post_time': post_time
 		})
 	else:
 		return render(request, 'week71.html')
@@ -395,9 +398,12 @@ def nb_run(request, type_api=True):
 	payload = json.loads(request.body) if type_api else request.POST
 	dataInput = ",".join([payload[f'fitur_{i}'] for i in range(1, 7)])
 
+	start_time = time.time()
 	#run hadoop
 	exitcode, stdout, stdin = run_process([HADOOP_BIN, 'jar', 'hadoop/NBMapReduce/NBMapReduce.jar', 'NBCDriver', dataInput, 'hadoop/NBMapReduce/dataset.txt', 'hadoop/NBMapReduce/output/'+output_dir])
 
+	running_time = time.time() - start_time
+	start_time = time.time()
 	#Return if error occured		
 	if exitcode :
 		cetak = exitcode
@@ -407,13 +413,14 @@ def nb_run(request, type_api=True):
 	#delete output dir
 	run_process([HADOOP_BIN, "fs", "-rm", "-r", 'hadoop/NBMapReduce/output/'+output_dir])
 
+	post_time = time.time() - start_time
 	#return
-	return cetak[1]
+	return cetak[1], running_time, post_time
 
 @csrf_exempt
 def post_api(request):
     if request.method == 'POST' :
-        hasil = nb_run(request)
-        response = json.dumps({ 'prediksi': hasil })
+        hasil, running_time, post_time = nb_run(request)
+        response = json.dumps({ 'prediksi': hasil, 'execution_time': running_time, 'post_time': post_time })
 
     return HttpResponse(response, content_type='text/json')

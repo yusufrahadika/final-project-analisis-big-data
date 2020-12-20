@@ -112,10 +112,24 @@ Week 71
                 <div class="col md-12">
                     <form action="#" class="form-horizontal">
                         <div class="form-group">
-                            <label class="col-sm-12">Fitur 1</label>
+                            <label class="col-sm-12">Hasil Klasifikasi</label>
                             <div class="col-sm-12">
                                 <input value="{{ prediction }}" class="form-control" type="text" name="hasil" id="hasil"
-                                    placeholder="Hasil">
+                                    placeholder="Hasil Klasifikasi" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-12">Waktu Eksekusi (detik)</label>
+                            <div class="col-sm-12">
+                                <input value="{{ execution_time }}" class="form-control" type="text" name="hasil" id="hasil"
+                                    placeholder="Waktu Eksekusi" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-12">Waktu Post (detik)</label>
+                            <div class="col-sm-12">
+                                <input value="{{ post_time }}" class="form-control" type="text" name="hasil" id="hasil"
+                                    placeholder="Waktu Post" disabled>
                             </div>
                         </div>
                     </form>
