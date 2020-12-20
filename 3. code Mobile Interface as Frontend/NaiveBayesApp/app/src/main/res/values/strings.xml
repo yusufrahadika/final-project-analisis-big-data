@@ -1,3 +1,70 @@
 <resources>
     <string name="app_name">NB Hadoop Apps</string>
+
+    <string-array name="fitur_1">
+        <item>Pilih kategori harga beli</item>
+        <item>Rendah</item>
+        <item>Sedang</item>
+        <item>Tinggi</item>
+        <item>Sangat Tinggi</item>
+    </string-array>
+    <string-array name="fitur_2">
+        <item>Pilih kategori biaya perawatan</item>
+        <item>Rendah</item>
+        <item>Sedang</item>
+        <item>Tinggi</item>
+        <item>Sangat Tinggi</item>
+    </string-array>
+    <string-array name="fitur_1_2_val">
+        <item>low</item>
+        <item>med</item>
+        <item>high</item>
+        <item>vhigh</item>
+    </string-array>
+    <string-array name="fitur_3">
+        <item>Pilih jumlah pintu</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5 atau lebih</item>
+    </string-array>
+    <string-array name="fitur_3_val">
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5more</item>
+    </string-array>
+    <string-array name="fitur_4">
+        <item>Pilih kapasitas penumpang</item>
+        <item>2</item>
+        <item>4</item>
+        <item>Lebih dari 4</item>
+    </string-array>
+    <string-array name="fitur_4_val">
+        <item>2</item>
+        <item>4</item>
+        <item>more</item>
+    </string-array>
+    <string-array name="fitur_5">
+        <item>Pilih ukuran bagasi</item>
+        <item>Kecil</item>
+        <item>Sedang</item>
+        <item>Besar</item>
+    </string-array>
+    <string-array name="fitur_5_val">
+        <item>small</item>
+        <item>med</item>
+        <item>big</item>
+    </string-array>
+    <string-array name="fitur_6">
+        <item>Pilih fitur keamanan</item>
+        <item>Rendah</item>
+        <item>Sedang</item>
+        <item>Tinggi</item>
+    </string-array>
+    <string-array name="fitur_6_val">
+        <item>low</item>
+        <item>med</item>
+        <item>high</item>
+    </string-array>
 </resources>

@@ -81,7 +81,8 @@
         android:id="@+id/sv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/bgHeader">
+        android:elevation="10dp"
+        android:layout_below="@+id/tvHome">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -105,55 +106,109 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:text="Jenis Kepentingan (Fitur 1)"
+                        android:text="Harga Beli (Fitur 1)"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
-                    <EditText
+                    <Spinner
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:inputType="text"
-                        android:hint="Urgent / Near / None (Case sensitive)"
-                        android:id="@+id/fitur_1"/>
+                        android:tooltipText="Pilih kategori harga beli"
+                        android:entries="@array/fitur_1"
+                        android:id="@+id/fitur_1" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:text="(Perta atau tidak) Fitur 2"
+                        android:text="Biaya Perawatan (Fitur 2)"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
-                    <EditText
+                    <Spinner
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:inputType="text"
-                        android:hint="Yes / No (Case sensitive)"
+                        android:tooltipText="Pilih kategori biaya perawatan"
+                        android:entries="@array/fitur_2"
                         android:id="@+id/fitur_2" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:text="Malas atau tidak (Fitur 3)"
+                        android:text="Jumlah Pintu (Fitur 3)"
                         android:textColor="@color/colorPurple"
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
-                    <EditText
+                    <Spinner
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:inputType="text"
-                        android:hint="Yes / No (Case sensitive)"
-                        android:id="@+id/fitur_3"/>
+                        android:tooltipText="Pilih jumlah pintu"
+                        android:entries="@array/fitur_3"
+                        android:id="@+id/fitur_3" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Kapasitas Penumpang (Fitur 4)"
+                        android:textColor="@color/colorPurple"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:tooltipText="Pilih kapasitas penumpang"
+                        android:entries="@array/fitur_4"
+                        android:id="@+id/fitur_4" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Ukuran Bagasi (Fitur 5)"
+                        android:textColor="@color/colorPurple"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:tooltipText="Pilih ukuran bagasi"
+                        android:entries="@array/fitur_5"
+                        android:id="@+id/fitur_5" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Fitur Keamanan (Fitur 6)"
+                        android:textColor="@color/colorPurple"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:tooltipText="Pilih fitur keamanan"
+                        android:entries="@array/fitur_6"
+                        android:id="@+id/fitur_6" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 

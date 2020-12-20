@@ -1,4 +1,3 @@
-# from python:3.7-slim-stretch
 from python:3.8-slim
 
 WORKDIR /root
