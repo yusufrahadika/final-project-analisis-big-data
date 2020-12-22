@@ -1,11 +1,22 @@
-version: '3.8'
+version: "3.8"
 
 services:
   server:
-    container_name: server_container
+    container_name: fp_abd_server
     build: ./2. code Web Interface as Backend n Frontend - core
     ports:
       - "8000:8000"
     volumes:
       - ./2. code Web Interface as Backend n Frontend - core/:/app
+      - ./dataset.txt:/app/bigdatadigitalent/hadoop/NBMapReduce/dataset.txt
+    restart: always
+
+  jupyter_spark:
+    container_name: fp_abd_jupyter_spark
+    build: ./4. code NB Pyspark
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./4. code NB Pyspark/:/app
+      - ./dataset.txt:/app/dataset.txt
     restart: always
